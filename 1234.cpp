@@ -10,7 +10,12 @@ void itc_num_print(int number)
 int itc_len_num(long long number)
 {
     int a=0;
-    while (number!=0)
+    while (number>0)
+    {
+        number=number/10;
+        a++;
+    }
+    while (number<0)
     {
         number=number/10;
         a++;
@@ -21,7 +26,12 @@ int itc_len_num(long long number)
 int itc_sum_num(long long number)
 {
     int a=0;
-    while (number!=0)
+    while (number>0)
+    {
+        a=a+number%10;
+        number=number/10;
+    }
+    while (number<0)
     {
         a=a+number%10;
         number=number/10;
@@ -33,7 +43,17 @@ long long itc_multi_num(long long number)
 {
     int a=1;
     int z;
+    while (number==0)
+    {
+        return 0;
+    }
     while (number>0)
+    {
+        z=number%10;
+        a=a*z;
+        number=number/10;
+    }
+    while (number<0)
     {
         z=number%10;
         a=a*z;
