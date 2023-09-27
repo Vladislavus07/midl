@@ -58,7 +58,7 @@ int itc_rev_num(long long number)
     }
     if (a == 0)
     {
-        return 0;
+        return 1;
     }
     while (a!=0)
     {
