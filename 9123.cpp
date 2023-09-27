@@ -24,3 +24,78 @@ int itc_mirror_count(long long number)
     }
     return temp;
 }
+int itc_second_max_num(long long number) {
+    if (number <= 9) 
+    {
+        return -1;
+    }
+    if (number < 0)
+    {
+        number = -number;
+    }
+    int a = -1;
+    int b = -1;
+
+    while (number > 0) {
+        int z = number % 10;
+
+        if (z >= a) {
+            b = a;
+            a = z;
+        } else if (z != a && z > b ) {
+            b = z;
+        }
+
+        number /= 10;
+    }
+
+    return b;
+}
+
+int itc_second_simple_max_num(long long number)
+{
+    if (number < 0)
+    {
+        number = -number;
+    }
+    if (number <= 9) 
+    {
+        return -1;
+    }
+    
+
+    int a = -1;
+    int b = -1;
+
+    while (number > 0) {
+        int z = number % 10;
+
+        if (z >= a) {
+            b = a;
+            a = z;
+        } else if (z != a && z > b) {
+            b = z;
+        }
+
+        number /= 10;
+    }
+    if (a == b)
+        return -1;
+    else
+        return b;
+}
+
+long long itc_bin_num(long long number)
+    {
+    long long b = 1;
+    long long a = 0;
+
+    while (number != 0) {
+        int z = number % 2;
+        a += z * b;
+        b *= 10;
+        number /= 2;
+    }
+
+    return a;
+}
