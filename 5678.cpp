@@ -5,15 +5,15 @@ using namespace std;
 int itc_max_num(long long number)
 {
     int z,a=0;
-    while (number>0)
+    if (number<0)
     {
-        if(number%10>a)
-        {
-            a=number%10;
-        }
-        number=number/10;
+        number = -number;
     }
-    while (number<0)
+    if (number==0)
+    {
+        return 0;
+    }
+    while (number!=0)
     {
         if(number%10>a)
         {
@@ -26,42 +26,44 @@ int itc_max_num(long long number)
 
 int itc_min_num(long long number)
 {
-    int a=number%10;
-    while (number>0)
+    int z=10,a;
+    if (number<0)
     {
-        if(number%10<a)
+        number= -number;
+    }
+    
+    if (number==0)
+    {
+        return 0;
+    }
+    while (number!=0)
+    {
+        a=number%10;
+        if(a <= z)
         {
-            a=number%10;
+            z=a;
         }
         number=number/10;
     }
-    while (number<0)
-    {
-        if(number%10<a)
-        {
-            a=number%10;
-        }
-        number=number/10;
-    }
-    return a;
+    return z;
 }
 
 int itc_rev_num(long long number)
 {
     int a,i=0;
     a=(number-number/10*10)*100 + (number/10-number/100*10)*10 + (number/100);
-    while (a>0)
+    if (a<0)
+    {
+        number= -number;
+    }
+    if (a == 0)
+    {
+        return 0;
+    }
+    while (a!=0)
     {
         a=a/10;
         i++;
-    }
-    while (a<0){
-        a=a/10;
-        i--;
-    }
-    while (number==0)
-    {
-        return 1;
     }
     return i;
 
