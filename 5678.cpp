@@ -50,25 +50,23 @@ int itc_min_num(long long number)
 
 int itc_rev_num(long long number)
 {
-    int a,i=0;
-    a=(number-number/10*10)*100 + (number/10-number/100*10)*10 + (number/100);
-    if (a<0)
+    int i=0;
+    if (number<0)
     {
         number= -number;
     }
-    if (a == 0)
+    if (number == 0)
     {
         return 1;
     }
-    while (a!=0)
-    {
-        a=a/10;
-        i++;
-    }
+    while (number%10 == 0)
+        number =number /10;
+        while (number!=0)
+        {
+         number=number/10;
+         i++;
+        }
     return i;
-
-    //return a;
-}
 
 int itc_null_count(long long number)
 {
