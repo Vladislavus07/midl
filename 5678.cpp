@@ -67,6 +67,7 @@ int itc_rev_num(long long number)
          i++;
         }
     return i;
+}
 
 int itc_null_count(long long number)
 {
