@@ -24,12 +24,13 @@ int itc_mirror_count(long long number)
     }
     return temp;
 }
-int itc_second_max_num(long long number) {
+int itc_second_max_num(long long number)
 {
     if (number < 0)
     {
         number = -number;
     }
+    
     if (number <= 9) 
     {
         return -1;
@@ -38,8 +39,7 @@ int itc_second_max_num(long long number) {
     int a = -1;
     int b = -1;
 
-    while (number > 0) 
-    {
+    while (number > 0) {
         int z = number % 10;
 
         if (z >= a) {
@@ -51,6 +51,7 @@ int itc_second_max_num(long long number) {
 
         number /= 10;
     }
+
     return b;
 }
 
