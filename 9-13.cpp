@@ -25,14 +25,16 @@ int itc_mirror_count(long long number)
     return temp;
 }
 int itc_second_max_num(long long number) {
-    if (number <= 9) 
-    {
-        return -1;
-    }
+{
     if (number < 0)
     {
         number = -number;
     }
+    if (number <= 9) 
+    {
+        return -1;
+    }
+    
     int a = -1;
     int b = -1;
 
