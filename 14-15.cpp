@@ -30,3 +30,15 @@ int itc_rev_bin_num(long long number)
 
     return b;
 }
+
+string perevod(int number)
+    {
+    string st = "";
+    while (number > 0) {
+        int zifra = number % 3;
+        number = number / 3;
+        char z = zifra + '0';
+        st = z + st;
+    }
+    return st;
+}
